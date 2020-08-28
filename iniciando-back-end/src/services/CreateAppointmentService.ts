@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import { startOfHour } from 'date-fns';
 import { getCustomRepository } from 'typeorm';
+import AppError from '../errors/AppError';
 
 import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
@@ -21,7 +22,7 @@ class CreateAppointmentService {
     );
 
     if (finAppointmentsInSameDate) {
-      throw Error('This appointement har alreedy booked');
+      throw new AppError('This appointement har alreedy booked');
     }
 
     const appointment = appointmentsRepository.create({
