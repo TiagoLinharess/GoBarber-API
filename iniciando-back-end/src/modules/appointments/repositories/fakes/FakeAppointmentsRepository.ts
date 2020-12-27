@@ -1,5 +1,7 @@
 import { v4 as uuid } from 'uuid';
-import { isEqual, getDate, getMonth, getYear } from 'date-fns';
+import {
+ isEqual, getDate, getMonth, getYear
+} from 'date-fns';
 
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 import ICreateAppointmentDTO from '@modules/appointments/dtos/ICreateAppointmentDTO';
